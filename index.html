@@ -78,6 +78,17 @@
     .contact-item{display:flex; align-items:center; gap:.6rem}
     .contact-item .icon{width:22px; height:22px; color:var(--muted)}
     .contact-item .icon svg{width:100%; height:100%; display:block}
+    /* === FIX: estilos de iconos === */
+    .icon-outline svg{
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .icon-solid svg{
+      fill: currentColor;
+    }
     footer{padding:2rem 0; border-top:1px solid var(--border); font-size:.95rem}
     .skip-link{position:absolute; left:-9999px}
     .skip-link:focus{left:1rem; top:1rem; background:var(--card); color:var(--text); padding:.5rem .75rem; border-radius:.5rem; border:1px solid var(--border)}
@@ -226,7 +237,6 @@
         <div class="item">
           <p data-i18n="cv.text">Download the latest version of my curriculum vitae here.</p>
           <p><a class="btn primary" href="cv.html" data-i18n="cv.button">Download my CV</a></p>
-          <!-- Inline CV viewer removed as requested -->
         </div>
       </div>
     </section>
@@ -237,24 +247,33 @@
         <h3 id="contact-title" data-i18n="contact.title">Contact</h3>
         <div class="item">
           <ul class="contact-list">
+            <!-- Email (outline) -->
             <li class="contact-item">
               <span class="icon icon-outline" aria-hidden="true">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M22 8l-9.2 5.75a2 2 0 0 1-2.1 0L1.5 8"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="M3 7l9 6 9-6"/>
+                </svg>
               </span>
               <a href="mailto:martin22@bu.edu">martin22@bu.edu</a>
             </li>
+            <!-- Address (outline) -->
             <li class="contact-item">
               <span class="icon icon-outline" aria-hidden="true">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><path d="M12 21s7-6.2 7-11.2A7 7 0 0 0 5 9.8C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.5"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img">
+                  <path d="M12 21s7-6.2 7-11.2A7 7 0 0 0 5 9.8C5 14.8 12 21 12 21z"/>
+                  <circle cx="12" cy="9.8" r="2.5"/>
+                </svg>
               </span>
               <span>
                 <a href="https://maps.google.com/?q=270+Bay+State+Road+%23445,+Office+B94,+Boston,+MA+02215" target="_blank" rel="noopener">270 Bay State Road #445, Office B94<br>Boston, MA 02215</a>
               </span>
             </li>
+            <!-- LinkedIn (solid) -->
             <li class="contact-item">
               <span class="icon icon-solid linkedin" aria-hidden="true">
                 <svg role="img" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="currentColor" d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.205 24 24 23.226 24 22.271V1.729C24 .774 23.205 0 22.225 0zM7.059 20.452H3.558V9h3.501v11.452zM5.308 7.433h-.023c-1.175 0-1.936-.81-1.936-1.824 0-1.035.782-1.824 1.98-1.824 1.199 0 1.936.789 1.959 1.824 0 1.014-.76 1.824-1.98 1.824zM20.447 20.452h-3.501v-5.969c0-1.5-.536-2.523-1.875-2.523-1.024 0-1.634.688-1.902 1.352-.098.238-.122.57-.122.904v6.236H9.546s.047-10.122 0-11.452h3.501v1.622c.465-.718 1.294-1.739 3.146-1.739 2.298 0 4.254 1.503 4.254 4.733v6.836z"/>
+                  <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.205 24 24 23.226 24 22.271V1.729C24 .774 23.205 0 22.225 0zM7.059 20.452H3.558V9h3.501v11.452zM5.308 7.433h-.023c-1.175 0-1.936-.81-1.936-1.824 0-1.035.782-1.824 1.98-1.824 1.199 0 1.936.789 1.959 1.824 0 1.014-.76 1.824-1.98 1.824zM20.447 20.452h-3.501v-5.969c0-1.5-.536-2.523-1.875-2.523-1.024 0-1.634.688-1.902 1.352-.098.238-.122.57-.122.904v6.236H9.546s.047-10.122 0-11.452h3.501v1.622c.465-.718 1.294-1.739 3.146-1.739 2.298 0 4.254 1.503 4.254 4.733v6.836z"/>
                 </svg>
               </span>
               <a data-linkedin href="https://www.linkedin.com/in/martin-martinez-8a410499/" target="_blank" rel="noopener">LinkedIn</a>
