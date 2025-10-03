@@ -94,7 +94,7 @@
     @media (max-width: 800px){
       .hero-grid{grid-template-columns:1fr; text-align:center}
     }
-    .avatar-wrap{display:flex; align-items:center; justify-content:center; flex-direction:column; align-self:start} 
+    .avatar-wrap{display:flex; align-items:center; justify-content:center; flex-direction:column; align-self:start; margin-top:4px}  
     .avatar{
       width:200px; height:200px; border-radius:50%; object-fit:cover; border:4px solid var(--border); box-shadow:0 4px 24px color-mix(in oklab, var(--text) 10%, transparent);
     }
@@ -193,6 +193,7 @@
     /* Skip link */
     .skip-link{position:absolute; left:-9999px}
     .skip-link:focus{left:1rem; top:1rem; background:var(--card); color:var(--text); padding:.5rem .75rem; border-radius:.5rem; border:1px solid var(--border)}
+    @media (max-width: 800px){ .avatar-wrap{ margin-top: 0 } }
   </style>
 </head>
 <body>
@@ -434,7 +435,7 @@
       en: {
         'nav.home':'Home','nav.research':'Research','nav.cv':'CV','nav.contact':'Contact',
         'hero.welcome':'Welcome!',
-        'hero.blurb':'I’m a Ph.D. candidate in Economics at Boston University with research interests in macroeconomics and applied econometrics. I have 7+ years of central bank experience developing forecasting and nowcasting frameworks and conducting macroeconomic analysis, combining rigorous econometric modeling with modern data-driven methods. My areas of expertise include economic forecasting, nowcasting, and econometric modeling.',
+        'hero.blurb':'I’m a Ph.D. candidate in Economics at Boston University with research interests in macroeconomics and applied econometrics. I have 7+ years of central bank experience developing forecasting frameworks and conducting macroeconomic analysis, combining rigorous econometric modeling with modern data-driven methods. My areas of expertise include economic forecasting, nowcasting, and econometric modeling.',
         'hero.role':'Ph.D. Candidate','hero.contactLabel':'Contact:',
         'research.title':'Research','research.publications':'Publications','research.working':'Working Papers','research.wip':'Work in Progress',
         'experience.title':'Experience',
@@ -448,7 +449,7 @@
       es: {
         'nav.home':'Inicio','nav.research':'Investigación','nav.cv':'CV','nav.contact':'Contacto',
         'hero.welcome':'¡Bienvenido!',
-        'hero.blurb':'Soy candidato a Ph.D. en Economía en Boston University, con intereses de investigación en macroeconomía y econometría aplicada. Tengo más de 7 años de experiencia en banca central desarrollando marcos de pronóstico y nowcasting y realizando análisis macroeconómico, combinando modelación econométrica rigurosa con métodos modernos basados en datos. Mis áreas de especialización incluyen pronóstico económico, nowcasting y modelación econométrica.',
+        'hero.blurb':'Soy candidato a Ph.D. en Economía en Boston University, con intereses de investigación en macroeconomía y econometría aplicada. Tengo más de 7 años de experiencia en banca central desarrollando marcos de pronóstico y realizando análisis macroeconómico, combinando modelación econométrica rigurosa con métodos modernos basados en datos. Mis áreas de especialización incluyen pronóstico económico, nowcasting y modelación econométrica.',
         'hero.role':'Candidato a Ph.D.','hero.contactLabel':'Contacto:',
         'research.title':'Investigación','research.publications':'Publicaciones','research.working':'Documentos de trabajo','research.wip':'En progreso',
         'experience.title':'Experiencia',
