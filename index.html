@@ -345,7 +345,12 @@
         <h3 id="cv-title" data-i18n="cv.title">CV</h3>
         <div class="item">
           <p data-i18n="cv.text">Download the latest version of my curriculum vitae here.</p>
-          <p><a class="btn primary" href="cv.pdf" download data-i18n="cv.button">Download CV</a></p>
+          <p><a class="btn primary" href="#cv-viewer" data-i18n="cv.button">View CV</a></p>
+          <div id="cv-viewer" class="cv-viewer" style="margin-top:1rem;">
+            <object data="cv.pdf#toolbar=1&navpanes=0&scrollbar=1&view=FitH" type="application/pdf" width="100%" height="900">
+              <p class="muted">Your browser cannot display PDFs inline. <a href="cv.pdf" target="_blank" rel="noopener">Open the CV in a new tab</a>.</p>
+            </object>
+          </div>
           
         </div>
       </div>
@@ -439,7 +444,7 @@
         'hero.role':'Ph.D. Candidate','hero.contactLabel':'Contact:',
         'research.title':'Research','research.publications':'Publications','research.working':'Working Papers','research.wip':'Work in Progress',
         'experience.title':'Experience',
-        'cv.title':'CV','cv.text':'Download the latest version of my curriculum vitae here.','cv.button':'Download CV',
+        'cv.title':'CV','cv.text':'Download the latest version of my curriculum vitae here.','cv.button':'View CV',
         'contact.title':'Contact',
         'footer.built':'Built with plain HTML/CSS.',
         'paper.pub1':'<a href="https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/33/ree-33-contreras-quispe-regalado-martinez.pdf" target="_blank" rel="noopener">Real Dollarization in Peru.</a>',
@@ -453,7 +458,7 @@
         'hero.role':'Candidato a Ph.D.','hero.contactLabel':'Contacto:',
         'research.title':'Investigación','research.publications':'Publicaciones','research.working':'Documentos de trabajo','research.wip':'En progreso',
         'experience.title':'Experiencia',
-        'cv.title':'CV','cv.text':'Descarga aquí la última versión de mi currículum.','cv.button':'Descargar CV',
+        'cv.title':'CV','cv.text':'Descarga aquí la última versión de mi currículum.','cv.button':'Ver CV',
         'contact.title':'Contacto',
         'footer.built':'Hecho con HTML/CSS puro.',
         'paper.pub1':'<a href="https://www.bcrp.gob.pe/docs/Publicaciones/Revista-Estudios-Economicos/33/ree-33-contreras-quispe-regalado-martinez.pdf" target="_blank" rel="noopener">Dolarización real en el Perú.</a>',
