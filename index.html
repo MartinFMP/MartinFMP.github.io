@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Martín Martínez — Economist</title>
   <meta name="description" content="Ph.D. candidate in Economics. Research in macroeconomics and applied econometrics." />
+  <!-- Preconnect to both Google Fonts origins to reduce layout shift -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Use display=optional to avoid late font swap (prevents brief resize) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
   <link rel="icon" href="favicon.ico" />
   <meta property="og:title" content="Martín Martínez — Economist" />
   <meta property="og:description" content="Ph.D. candidate in Economics. Research in macroeconomics and applied econometrics." />
@@ -58,6 +61,7 @@
     body{
       margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       line-height:1.6; color:var(--text); background:var(--bg);
+      text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     a{color:var(--link); text-decoration: none}
     a:hover{text-decoration: underline}
@@ -221,8 +225,8 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="avatar-wrap">
-          <!-- Replace headshot.jpg with your own image file -->
-          <img src="headshot.jpg" alt="Portrait of Martín Martínez" class="avatar" />
+          <!-- Provide explicit dimensions to prevent reflow when image loads -->
+          <img src="headshot.jpg" alt="Portrait of Martín Martínez" class="avatar" width="200" height="200" />
           <!-- Quick contact under photo -->
           <div class="quick-contact">
             
@@ -239,7 +243,7 @@
           <div class="hero-contacts">
             <div class="contact-label"><span data-i18n="hero.contactLabel">Contact:</span> <a href="mailto:martin22@bu.edu">martin22@bu.edu</a></div>
             <div class="quick-icons">
-              <a class="ci" href="https://www.linkedin.com/in/mm-martin-martinez" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <a class="ci" data-linkedin href="https://www.linkedin.com/in/martin-martinez-8a410499/" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <svg role="img" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                   <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.205 24 24 23.226 24 22.271V1.729C24 .774 23.205 0 22.225 0zM7.059 20.452H3.558V9h3.501v11.452zM5.308 7.433h-.023c-1.175 0-1.936-.81-1.936-1.824 0-1.035.782-1.824 1.98-1.824 1.199 0 1.936.789 1.959 1.824 0 1.014-.76 1.824-1.98 1.824zM20.447 20.452h-3.501v-5.969c0-1.5-.536-2.523-1.875-2.523-1.024 0-1.634.688-1.902 1.352-.098.238-.122.57-.122.904v6.236H9.546s.047-10.122 0-11.452h3.501v1.622c.465-.718 1.294-1.739 3.146-1.739 2.298 0 4.254 1.503 4.254 4.733v6.836z"/>
                 </svg>
@@ -375,7 +379,7 @@
                   <path fill="currentColor" d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.205 24 24 23.226 24 22.271V1.729C24 .774 23.205 0 22.225 0zM7.059 20.452H3.558V9h3.501v11.452zM5.308 7.433h-.023c-1.175 0-1.936-.81-1.936-1.824 0-1.035.782-1.824 1.98-1.824 1.199 0 1.936.789 1.959 1.824 0 1.014-.76 1.824-1.98 1.824zM20.447 20.452h-3.501v-5.969c0-1.5-.536-2.523-1.875-2.523-1.024 0-1.634.688-1.902 1.352-.098.238-.122.57-.122.904v6.236H9.546s.047-10.122 0-11.452h3.501v1.622c.465-.718 1.294-1.739 3.146-1.739 2.298 0 4.254 1.503 4.254 4.733v6.836z"/>
                 </svg>
               </span>
-              <a href="https://www.linkedin.com/in/mm-martin-martinez" target="_blank" rel="noopener">LinkedIn</a>
+              <a data-linkedin href="https://www.linkedin.com/in/martin-martinez-8a410499/" target="_blank" rel="noopener">LinkedIn</a>
             </li>
           </ul>
         </div>
@@ -429,7 +433,9 @@
     const i18n = {
       en: {
         'nav.home':'Home','nav.research':'Research','nav.cv':'CV','nav.contact':'Contact',
-        'hero.welcome':'Welcome!','hero.blurb':'I am a Ph.D. candidate in Economics at Boston University, with research interests in macroeconomics and applied econometrics. I bring a strong background in central banking and have a solid command of data-driven tools and quantitative methods. My areas of expertise include economic forecasting, nowcasting, and econometric modeling.','hero.role':'Ph.D. Candidate','hero.contactLabel':'Contact:',
+        'hero.welcome':'Welcome!',
+        'hero.blurb':'I’m a Ph.D. candidate in Economics at Boston University with research interests in macroeconomics and applied econometrics. I have 7+ years of central bank experience developing forecasting and nowcasting frameworks, combining rigorous econometric modeling with modern data-driven methods.',
+        'hero.role':'Ph.D. Candidate','hero.contactLabel':'Contact:',
         'research.title':'Research','research.publications':'Publications','research.working':'Working Papers','research.wip':'Work in Progress',
         'experience.title':'Experience',
         'cv.title':'CV','cv.text':'Download the latest version of my curriculum vitae here.','cv.button':'Download CV',
@@ -441,7 +447,9 @@
       },
       es: {
         'nav.home':'Inicio','nav.research':'Investigación','nav.cv':'CV','nav.contact':'Contacto',
-        'hero.welcome':'¡Bienvenido!','hero.blurb':'Soy candidato a Ph.D. en Economía en Boston University, con intereses de investigación en macroeconomía y econometría aplicada. Tengo experiencia en banca central y un sólido manejo de herramientas cuantitativas y de datos. Mis áreas de especialización incluyen pronóstico económico, nowcasting y modelado econométrico.','hero.role':'Candidato a Ph.D.','hero.contactLabel':'Contacto:',
+        'hero.welcome':'¡Bienvenido!',
+        'hero.blurb':'Soy candidato a Ph.D. en Economía en Boston University, con intereses de investigación en macroeconomía y econometría aplicada. Tengo más de 7 años de experiencia en banca central desarrollando marcos de pronóstico y nowcasting, combinando modelación econométrica rigurosa con métodos modernos basados en datos.',
+        'hero.role':'Candidato a Ph.D.','hero.contactLabel':'Contacto:',
         'research.title':'Investigación','research.publications':'Publicaciones','research.working':'Documentos de trabajo','research.wip':'En progreso',
         'experience.title':'Experiencia',
         'cv.title':'CV','cv.text':'Descarga aquí la última versión de mi currículum.','cv.button':'Descargar CV',
@@ -462,6 +470,13 @@
       if(btn){ btn.classList.add('active'); btn.setAttribute('aria-pressed','true'); }
     }
 
+    function setLinkedInHrefForLang(lang){
+      const links = document.querySelectorAll('a[data-linkedin]');
+      const base = 'https://www.linkedin.com/in/martin-martinez-8a410499/';
+      const href = (lang==='en') ? base + '?locale=en_US' : base; // English = en_US, otherwise generic
+      links.forEach(a=>{ a.setAttribute('href', href); });
+    }
+
     function applyLang(lang){
       const dict = i18n[lang] || i18n.en;
       document.documentElement.lang = (lang==='es'?'es':'en');
@@ -471,6 +486,7 @@
       });
       localStorage.setItem('lang', lang);
       setLangActive(lang);
+      setLinkedInHrefForLang(lang);
     }
 
     const savedLang = localStorage.getItem('lang') || 'en';
@@ -492,7 +508,7 @@
     },
     "email": "mailto:martin22@bu.edu",
     "sameAs": [
-      "https://www.linkedin.com/in/mm-martin-martinez"
+      "https://www.linkedin.com/in/martin-martinez-8a410499/"
     ]
   }
   </script>
