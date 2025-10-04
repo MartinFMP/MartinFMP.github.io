@@ -89,6 +89,19 @@
     .icon-solid svg{
       fill: currentColor;
     }
+
+    /* === (2) Icono de maletín en Experience (CSS-only) === */
+    .t-role::before{
+      content:"";
+      display:inline-block;
+      width:18px; height:18px;
+      margin-right:8px; vertical-align:-3px;
+      background: currentColor;
+      -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10 6h4a2 2 0 0 1 2 2v2h-8V8a2 2 0 0 1 2-2z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 13v4"/></svg>') no-repeat center / contain;
+              mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10 6h4a2 2 0 0 1 2 2v2h-8V8a2 2 0 0 1 2-2z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 13v4"/></svg>') no-repeat center / contain;
+      opacity:.9;
+    }
+
     footer{padding:2rem 0; border-top:1px solid var(--border); font-size:.95rem}
     .skip-link{position:absolute; left:-9999px}
     .skip-link:focus{left:1rem; top:1rem; background:var(--card); color:var(--text); padding:.5rem .75rem; border-radius:.5rem; border:1px solid var(--border)}
@@ -313,6 +326,16 @@
     const savedLang=localStorage.getItem('lang')||'en'; applyLang(savedLang);
     if(btnLangEn) btnLangEn.addEventListener('click',()=>applyLang('en'));
     if(btnLangEs) btnLangEs.addEventListener('click',()=>applyLang('es'));
+  </script>
+
+  <!-- (1) Limpia /index.html en la barra si aparece -->
+  <script>
+    (function () {
+      if (/\/index\.html$/.test(location.pathname)) {
+        const clean = location.pathname.replace(/index\.html$/, '');
+        history.replaceState(null, '', clean + location.search + location.hash);
+      }
+    })();
   </script>
 
   <script type="application/ld+json">
