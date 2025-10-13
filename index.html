@@ -33,7 +33,7 @@
     .nav-links a:focus-visible, .nav-links button:focus-visible{outline:2px solid var(--primary); outline-offset:2px}
     .theme-switch,.lang-switch{display:flex; gap:.25rem; align-items:center; border:1px solid var(--border); border-radius:.7rem; padding:.25rem}
     .theme-switch button,.lang-switch button{border:0; background:transparent; color:var(--muted); padding:.35rem .6rem; border-radius:.5rem; cursor:pointer}
-    .theme-switch button.active,.lang-switch button.active{background:var(--card); color:var(--text")}
+    .theme-switch button.active,.lang-switch button.active{background:var(--card); color:var(--text)}
     .hero{padding:4rem 0 3rem;}
     .hero-grid{display:grid; grid-template-columns:220px 1fr; gap:2rem; align-items:start}
     @media (max-width:800px){.hero-grid{grid-template-columns:1fr; text-align:center}}
@@ -78,13 +78,31 @@
     .contact-item{display:flex; align-items:center; gap:.6rem}
     .contact-item .icon{width:22px; height:22px; color:var(--muted)}
     .contact-item .icon svg{width:100%; height:100%; display:block}
-    .icon-outline svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    /* === FIX iconografía general (no cambia el diseño existente) === */
+    .icon-outline svg{
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
     .icon-solid svg{ fill: currentColor; }
 
+    /* =========================
+       EXPERIENCE — Solo lo pedido
+       ========================= */
+    /* 1) Eliminamos el icono en el título (estaba antes aquí) */
     .t-role::before { content: none !important; }
+
+    /* 2) Ícono / nodo sobre la línea vertical, alineado */
     .t-item::before{
-      content:""; position:absolute; left:-11px; top:.15rem; width:20px; height:20px;
-      background: currentColor; border-radius:50%;
+      content:"";
+      position:absolute;
+      left:-11px;
+      top:.15rem;
+      width:20px; height:20px;
+      background: currentColor;
+      border-radius:50%;
       -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10 6h4a2 2 0 0 1 2 2v2h-8V8a2 2 0 0 1 2-2z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 13v4"/></svg>') center / contain no-repeat;
               mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10 6h4a2 2 0 0 1 2 2v2h-8V8a2 2 0 0 1 2-2z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 10h18v7a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-7z"/><path fill="none" stroke="black" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 13v4"/></svg>') center / contain no-repeat;
       opacity:.9;
@@ -170,9 +188,10 @@
 
         <h4 style="margin-top:2rem" data-i18n="research.working">Working Papers</h4>
         <div class="grid">
+          <!-- NUEVO: línea añadida, sin cambiar nada más -->
           <article class="r-item">
-            <div class="paper-title"><a href="https://martinfmp.github.io/Papers/Identifying_Peru_s_Business_Cycles.pdf" target="_blank" rel="noopener">Identifying Business Cycles for the Peruvian Economy: A Bayesian Approach</a></div>
-          </article>
+  <div class="paper-title"><a href="https://martinfmp.github.io/Papers/Identifying_Peru_s_Business_Cycles.pdf" target="_blank" rel="noopener">Identifying Business Cycles for the Peruvian Economy: A Bayesian Approach</a></div>
+</article>
 
           <article class="r-item">
             <div class="paper-title" data-i18n="paper.wp1">The impact of El Niño phenomenon in Peru.</div>
@@ -210,6 +229,7 @@
             <div class="t-org"><a href="https://www.bcrp.gob.pe/en/" target="_blank" rel="noopener">Central Bank of Peru</a></div>
             <div class="t-dates">Sep 2019 – Aug 2021</div>
             <ul class="t-desc-list">
+              <!-- NUEVO PRIMER BULLET solicitado -->
               <li>Coordination with public- and private-sector stakeholders to gather perspectives, identify key challenges, and develop sector-specific projections.</li>
               <li>Led monthly macroeconomic surveys and GDP nowcasting using high-frequency indicators.</li>
               <li>Developed forecasting models for production, expenditure, and national accounts statistics.</li>
@@ -245,8 +265,7 @@
         <h3 id="cv-title" data-i18n="cv.title">CV</h3>
         <div class="item">
           <p data-i18n="cv.text">Download the latest version of my curriculum vitae here.</p>
-          <!-- ÚNICO CAMBIO: enlazar directamente al PDF -->
-          <p><a class="btn primary" href="cv.pdf" data-i18n="cv.button">Download my CV</a></p>
+          <p><a class="btn primary" href="cv.html" data-i18n="cv.button">Download my CV</a></p>
         </div>
       </div>
     </section>
@@ -326,6 +345,7 @@
     if(btnLangEs) btnLangEs.addEventListener('click',()=>applyLang('es'));
   </script>
 
+  <!-- Limpia /index.html en la URL si aparece -->
   <script>
     (function () {
       if (/\/index\.html$/.test(location.pathname)) {
